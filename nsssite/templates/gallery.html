@@ -1,0 +1,177 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Gallery | NSS Unit 99{% endblock %}
+
+{% block extra_css %}
+<style>
+/* Album Styles */
+.album-card {
+    position: relative;
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    cursor: pointer;
+    aspect-ratio: 4/3;
+}
+.album-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform var(--transition-slow);
+}
+.album-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0) 100%);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: var(--spacing-md);
+    color: white;
+}
+.album-card:hover img {
+    transform: scale(1.05);
+}
+.album-count {
+    font-size: 0.875rem;
+    background: rgba(255,255,255,0.2);
+    backdrop-filter: blur(5px);
+    padding: 0.25rem 0.75rem;
+    border-radius: var(--radius-full);
+    align-self: flex-start;
+    margin-bottom: 0.5rem;
+}
+.album-title {
+    font-size: 1.25rem;
+    font-family: var(--font-heading);
+    margin-bottom: 0.25rem;
+    color: white;
+}
+
+/* Year Section */
+.year-section {
+    margin-bottom: var(--spacing-xl);
+}
+.year-title {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: var(--spacing-md);
+}
+.year-title::after {
+    content: '';
+    flex: 1;
+    height: 2px;
+    background-color: var(--color-neutral-200);
+}
+.year-number {
+    font-family: var(--font-heading);
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--color-primary);
+}
+
+/* Lightbox Base Styles (to be implemented functionally in JS) */
+.lightbox {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.9);
+    z-index: 2000;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+}
+.lightbox.active {
+    display: flex;
+}
+.lightbox-content {
+    max-width: 90%;
+    max-height: 90vh;
+}
+.lightbox-close {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    color: white;
+    font-size: 2rem;
+    cursor: pointer;
+}
+</style>
+{% endblock %}
+
+{% block content %}
+<!-- Page Header -->
+<div class="page-header fade-up visible">
+    <div class="container">
+        <h1>Photo Gallery</h1>
+        <div class="breadcrumb">
+            <a href="{% url 'home' %}">Home</a> / <span>Gallery</span>
+        </div>
+    </div>
+</div>
+
+<section class="section section-bg-grey">
+    <div class="container">
+        
+        <!-- 2026 Albums -->
+        <div class="year-section fade-up">
+            <div class="year-title">
+                <div class="year-number">2026</div>
+            </div>
+            <div class="grid grid-3">
+                <div class="album-card">
+                    <img src="https://images.unsplash.com/photo-1532996122724-e3c354a0b15f?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Blood Donation">
+                    <div class="album-overlay">
+                        <span class="album-count"><i class="fa-regular fa-image"></i> 24 Photos</span>
+                        <h3 class="album-title">Blood Donation Camp</h3>
+                        <p style="font-size: 0.9rem; margin-bottom: 0; opacity: 0.8;">January 2026</p>
+                    </div>
+                </div>
+                <div class="album-card">
+                    <img src="https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Tree Plantation">
+                    <div class="album-overlay">
+                        <span class="album-count"><i class="fa-regular fa-image"></i> 18 Photos</span>
+                        <h3 class="album-title">Tree Plantation Drive</h3>
+                        <p style="font-size: 0.9rem; margin-bottom: 0; opacity: 0.8;">February 2026</p>
+                    </div>
+                </div>
+                <div class="album-card">
+                    <img src="https://images.unsplash.com/photo-1509062522246-3755977927d7?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Awareness Campaign">
+                    <div class="album-overlay">
+                        <span class="album-count"><i class="fa-regular fa-image"></i> 12 Photos</span>
+                        <h3 class="album-title">Awareness Campaign</h3>
+                        <p style="font-size: 0.9rem; margin-bottom: 0; opacity: 0.8;">March 2026</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 2025 Albums -->
+        <div class="year-section fade-up">
+            <div class="year-title">
+                <div class="year-number">2025</div>
+            </div>
+            <div class="grid grid-3">
+                <div class="album-card">
+                    <img src="https://images.unsplash.com/photo-1526976663112-00d22227d825?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Rural Camp">
+                    <div class="album-overlay">
+                        <span class="album-count"><i class="fa-regular fa-image"></i> 85 Photos & Videos</span>
+                        <h3 class="album-title">7-Day Rural Camp</h3>
+                        <p style="font-size: 0.9rem; margin-bottom: 0; opacity: 0.8;">December 2025</p>
+                    </div>
+                </div>
+                <div class="album-card">
+                    <img src="https://images.unsplash.com/photo-1621451537084-482c73073a0f?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Beach Cleaning">
+                    <div class="album-overlay">
+                        <span class="album-count"><i class="fa-regular fa-image"></i> 32 Photos</span>
+                        <h3 class="album-title">Beach Cleaning</h3>
+                        <p style="font-size: 0.9rem; margin-bottom: 0; opacity: 0.8;">October 2025</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
+{% endblock %}

@@ -1,0 +1,220 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+<!-- Hero Section -->
+<section class="hero fade-up visible">
+    <div class="hero-bg" style="background-image: url('https://images.unsplash.com/photo-1593113544332-96cb3440ad81?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');"></div>
+    <div class="hero-overlay"></div>
+    <div class="container hero-content">
+        <div class="hero-subtitle">College of Engineering Poonjar</div>
+        <h1 class="hero-title">National Service Scheme<br>Unit 99</h1>
+        <p class="hero-motto">"Not Me But You"</p>
+        <div class="hero-buttons">
+               <a href="#" class="btn btn-primary">Explore Events</a>
+            <a href="#" class="btn btn-outline" style="border-color: white; color: white;">View Gallery</a>
+            <a href="#" class="btn btn-accent">Join Volunteers</a>
+        </div>
+    </div>
+</section>
+
+<!-- About Preview Section -->
+<section class="section section-bg-white">
+    <div class="container">
+        <div class="grid grid-2" style="align-items: center; gap: 4rem;">
+            <div class="about-image fade-up">
+                <img src="https://images.unsplash.com/photo-1529390079861-591de354faf5?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="NSS Volunteers" style="border-radius: var(--radius-lg); box-shadow: var(--shadow-lg);">
+            </div>
+            <div class="about-text fade-up" style="transition-delay: 0.2s;">
+                <span class="section-tag">Who We Are</span>
+                <h2 class="section-title">Developing Youth for Community Service</h2>
+                <p>The National Service Scheme (NSS) is an Indian government-sponsored public service program conducted by the Ministry of Youth Affairs and Sports. It provides an avenue to the youth for community service and developing their personality through voluntary work.</p>
+                <p>At College of Engineering Poonjar, Unit 99 is a vibrant community of passionate students dedicated to social causes, ranging from environmental conservation and health camps to rural development and youth empowerment.</p>
+                <a href="#" class="btn btn-primary mt-1">Learn More About Us <i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Impact Stats Section -->
+<section class="stats-section fade-up">
+    <div class="container">
+        <div class="grid grid-4">
+            <div class="stat-card">
+                <i class="fa-solid fa-users stat-icon"></i>
+                <div class="stat-number">120+</div>
+                <div class="stat-label">Active Volunteers</div>
+            </div>
+            <div class="stat-card">
+                <i class="fa-solid fa-calendar-check stat-icon"></i>
+                <div class="stat-number">80+</div>
+                <div class="stat-label">Events Conducted</div>
+            </div>
+            <div class="stat-card">
+                <i class="fa-solid fa-clock stat-icon"></i>
+                <div class="stat-number">3000+</div>
+                <div class="stat-label">Service Hours</div>
+            </div>
+            <div class="stat-card">
+                <i class="fa-solid fa-handshake-angle stat-icon"></i>
+                <div class="stat-number">20+</div>
+                <div class="stat-label">Community Projects</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Latest Events Section -->
+<section class="section section-bg-grey">
+    <div class="container">
+        <div class="section-header text-center fade-up">
+            <span class="section-tag">Recent Activities</span>
+            <h2 class="section-title">Latest Events</h2>
+        </div>
+        
+        <div class="grid grid-3 mt-2 fade-up" style="transition-delay: 0.2s;">
+            <!-- Event Card 1 -->
+            <div class="card">
+                <div style="overflow: hidden;">
+                    <img src="https://images.unsplash.com/photo-1532996122724-e3c354a0b15f?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Blood Donation Base" class="card-img">
+                </div>
+                <div class="card-body">
+                    <div class="card-meta">
+                        <span><i class="fa-regular fa-calendar"></i> Oct 15, 2025</span>
+                        <span style="margin-left: auto;" class="badge badge-primary">Health</span>
+                    </div>
+                    <h3 class="card-title">Mega Blood Donation Drive</h3>
+                    <p class="card-text">A successful blood donation camp organized in association with the district hospital, collecting over 150 units of blood from student volunteers.</p>
+                    <a href="#" class="btn btn-outline" style="align-self: flex-start;">View Details</a>
+                </div>
+            </div>
+            
+            <!-- Event Card 2 -->
+            <div class="card">
+                <div style="overflow: hidden;">
+                    <img src="https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Tree Plantation" class="card-img">
+                </div>
+                <div class="card-body">
+                    <div class="card-meta">
+                        <span><i class="fa-regular fa-calendar"></i> Sep 24, 2025</span>
+                        <span style="margin-left: auto;" class="badge badge-accent">Environment</span>
+                    </div>
+                    <h3 class="card-title">Campus Tree Plantation</h3>
+                    <p class="card-text">Planted over 200 saplings around the college campus to celebrate NSS Day and promote environmental awareness among students.</p>
+                    <a href="#" class="btn btn-outline" style="align-self: flex-start;">View Details</a>
+                </div>
+            </div>
+            
+            <!-- Event Card 3 -->
+            <div class="card">
+                <div style="overflow: hidden;">
+                    <img src="https://images.unsplash.com/photo-1509062522246-3755977927d7?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Awareness Campaign" class="card-img">
+                </div>
+                <div class="card-body">
+                    <div class="card-meta">
+                        <span><i class="fa-regular fa-calendar"></i> Aug 12, 2025</span>
+                        <span style="margin-left: auto;" class="badge badge-primary">Social</span>
+                    </div>
+                    <h3 class="card-title">Anti-Drug Awareness Campaign</h3>
+                    <p class="card-text">Interactive session and rally to spread awareness about the adverse effects of drug abuse among the youth and nearby community.</p>
+                    <a href="#" class="btn btn-outline" style="align-self: flex-start;">View Details</a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="text-center mt-2 fade-up" style="transition-delay: 0.4s;">
+            <a href="#" class="btn btn-primary">View All Events</a>
+        </div>
+    </div>
+</section>
+
+<!-- Gallery Preview Section -->
+<section class="section section-bg-white">
+    <div class="container">
+        <div class="section-header text-center fade-up">
+            <span class="section-tag">Memories</span>
+            <h2 class="section-title">Gallery Preview</h2>
+        </div>
+        
+        <div class="gallery-grid mt-2 fade-up" style="transition-delay: 0.2s;">
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1559027615-cd46289b2d4a?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Gallery Image 1">
+                <a href="#" class="gallery-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></a>
+            </div>
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1593113544332-96cb3440ad81?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Gallery Image 2">
+                <a href="#" class="gallery-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></a>
+            </div>
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1529390079861-591de354faf5?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Gallery Image 3">
+                <a href="#" class="gallery-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></a>
+            </div>
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Gallery Image 4">
+                <a href="#" class="gallery-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></a>
+            </div>
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1469571486292-0ba58a3f068b?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Gallery Image 5">
+                <a href="#" class="gallery-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></a>
+            </div>
+        </div>
+        
+        <div class="text-center mt-2 fade-up" style="transition-delay: 0.4s;">
+            <a href="#" class="btn btn-outline">View Full Gallery</a>
+        </div>
+    </div>
+</section>
+
+<!-- Latest News Section -->
+<section class="section section-bg-grey fade-up">
+    <div class="container">
+        <div class="section-header text-center">
+            <span class="section-tag">Updates</span>
+            <h2 class="section-title">Latest Announcements</h2>
+        </div>
+        
+        <div class="grid grid-2 mt-2">
+            <!-- News Item 1 -->
+            <div class="news-list-item" style="background: white; padding: 1.5rem; border-radius: var(--radius-md); display: flex; gap: 1rem; align-items: flex-start; box-shadow: var(--shadow-sm);">
+                <div class="news-date" style="background: var(--color-primary-light); color: var(--color-primary-dark); padding: 0.5rem 1rem; border-radius: var(--radius-md); text-align: center; font-weight: bold; min-width: 80px;">
+                    <div style="font-size: 1.5rem; line-height: 1;">24</div>
+                    <div style="font-size: 0.8rem; text-transform: uppercase;">Nov</div>
+                </div>
+                <div>
+                    <h4 style="margin-bottom: 0.5rem;"><a href="#">Special Camp 2026 Registration Open</a></h4>
+                    <p class="text-muted" style="font-size: 0.9rem; margin-bottom: 0;">The much-awaited 7-day special camp registration is now open for all second-year volunteers.</p>
+                </div>
+            </div>
+            
+            <!-- News Item 2 -->
+            <div class="news-list-item" style="background: white; padding: 1.5rem; border-radius: var(--radius-md); display: flex; gap: 1rem; align-items: flex-start; box-shadow: var(--shadow-sm);">
+                <div class="news-date" style="background: var(--color-primary-light); color: var(--color-primary-dark); padding: 0.5rem 1rem; border-radius: var(--radius-md); text-align: center; font-weight: bold; min-width: 80px;">
+                    <div style="font-size: 1.5rem; line-height: 1;">12</div>
+                    <div style="font-size: 0.8rem; text-transform: uppercase;">Nov</div>
+                </div>
+                <div>
+                    <h4 style="margin-bottom: 0.5rem;"><a href="#">New Volunteer Leadership Team Selected</a></h4>
+                    <p class="text-muted" style="font-size: 0.9rem; margin-bottom: 0;">Congratulations to the new core committee members for the academic year 2025-26.</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="text-center mt-2">
+            <a href="#" class="btn btn-primary">Read More News</a>
+        </div>
+    </div>
+</section>
+
+<!-- Instagram Embed Placeholder -->
+<section class="section section-bg-white text-center fade-up">
+    <div class="container">
+        <h3 class="section-title" style="margin-bottom: 1rem;"><i class="fa-brands fa-instagram" style="color: #e1306c;"></i> Follow Us on Instagram</h3>
+        <p class="text-muted" style="margin-bottom: 2rem;">Stay updated with our latest activities @nss_unit99_cepoonjar</p>
+        <div style="background: var(--color-neutral-100); padding: 3rem; border-radius: var(--radius-lg); border: 1px dashed var(--color-neutral-600);">
+            <p><strong>[Instagram Feed Embed Component]</strong></p>
+            <p class="text-muted" style="font-size: 0.9rem;">(Add your Instagram widget code here)</p>
+        </div>
+    </div>
+</section>
+
+{% endblock %}

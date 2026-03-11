@@ -1,0 +1,150 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Downloads | NSS Unit 99{% endblock %}
+
+{% block extra_css %}
+<style>
+.download-card {
+    background: white;
+    padding: 1.5rem;
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-sm);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: all var(--transition-fast);
+    border-left: 4px solid transparent;
+}
+.download-card:hover {
+    transform: translateX(5px);
+    box-shadow: var(--shadow-md);
+    border-left-color: var(--color-accent);
+}
+.download-info {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+.download-icon {
+    font-size: 2rem;
+    color: var(--color-neutral-400);
+}
+.download-card:hover .download-icon {
+    color: var(--color-accent);
+}
+.download-title {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--color-neutral-900);
+    margin-bottom: 0.25rem;
+}
+.download-meta {
+    font-size: 0.85rem;
+    color: var(--color-neutral-600);
+}
+.btn-download-sm {
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+}
+</style>
+{% endblock %}
+
+{% block content %}
+<!-- Page Header -->
+<div class="page-header fade-up visible">
+    <div class="container">
+        <h1>Downloads & Forms</h1>
+        <div class="breadcrumb">
+            <a href="{% url 'home' %}">Home</a> / <span>Downloads</span>
+        </div>
+    </div>
+</div>
+
+<section class="section section-bg-grey">
+    <div class="container">
+        <div class="grid" style="grid-template-columns: 1fr; gap: 3rem; max-width: 900px; margin: 0 auto;">
+            
+            <!-- Registration & Forms -->
+            <div class="fade-up">
+                <h3 class="mb-1" style="border-bottom: 2px solid var(--color-neutral-200); padding-bottom: 0.5rem;">Forms</h3>
+                <div class="grid" style="grid-template-columns: 1fr; gap: 1rem; margin-top: 1.5rem;">
+                    
+                    <div class="download-card">
+                        <div class="download-info">
+                            <i class="fa-regular fa-file-lines download-icon"></i>
+                            <div>
+                                <h4 class="download-title">NSS Volunteer Registration Form</h4>
+                                <div class="download-meta">PDF • 120 KB • Updated: Aug 2025</div>
+                            </div>
+                        </div>
+                        <a href="#" class="btn btn-outline btn-download-sm"><i class="fa-solid fa-download"></i> Download</a>
+                    </div>
+                    
+                    <div class="download-card">
+                        <div class="download-info">
+                            <i class="fa-regular fa-file-lines download-icon"></i>
+                            <div>
+                                <h4 class="download-title">Special Camp Consent Form</h4>
+                                <div class="download-meta">PDF • 85 KB • Updated: Nov 2025</div>
+                            </div>
+                        </div>
+                        <a href="#" class="btn btn-outline btn-download-sm"><i class="fa-solid fa-download"></i> Download</a>
+                    </div>
+
+                    <div class="download-card">
+                        <div class="download-info">
+                            <i class="fa-regular fa-file-lines download-icon"></i>
+                            <div>
+                                <h4 class="download-title">Event Proposal Format</h4>
+                                <div class="download-meta">DOCX • 45 KB • For Core Team</div>
+                            </div>
+                        </div>
+                        <a href="#" class="btn btn-outline btn-download-sm"><i class="fa-solid fa-download"></i> Download</a>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- Guidelines & Manuals -->
+            <div class="fade-up">
+                <h3 class="mb-1" style="border-bottom: 2px solid var(--color-neutral-200); padding-bottom: 0.5rem;">Guidelines & Manuals</h3>
+                <div class="grid" style="grid-template-columns: 1fr; gap: 1rem; margin-top: 1.5rem;">
+                    
+                    <div class="download-card">
+                        <div class="download-info">
+                            <i class="fa-solid fa-book-open download-icon"></i>
+                            <div>
+                                <h4 class="download-title">NSS Manual (Revised)</h4>
+                                <div class="download-meta">PDF • 5.4 MB • Govt. of India</div>
+                            </div>
+                        </div>
+                        <a href="#" class="btn btn-outline btn-download-sm"><i class="fa-solid fa-download"></i> Download</a>
+                    </div>
+
+                    <div class="download-card">
+                        <div class="download-info">
+                            <i class="fa-solid fa-list-check download-icon"></i>
+                            <div>
+                                <h4 class="download-title">Guideline for Award of NSS Certificate</h4>
+                                <div class="download-meta">PDF • 200 KB • University Guidelines</div>
+                            </div>
+                        </div>
+                        <a href="#" class="btn btn-outline btn-download-sm"><i class="fa-solid fa-download"></i> Download</a>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- Certificates Module Placeholder -->
+            <div class="fade-up text-center mt-2 mb-2" style="background: white; padding: 3rem; border-radius: var(--radius-lg); box-shadow: var(--shadow-sm);">
+                <i class="fa-solid fa-award" style="font-size: 3rem; color: var(--color-primary); margin-bottom: 1rem;"></i>
+                <h3 class="mb-1">Certificate Generator</h3>
+                <p class="text-muted mb-2">Volunteers can soon download their participation certificates directly using their registration ID.</p>
+                <button class="btn btn-primary" disabled style="opacity: 0.6; cursor: not-allowed;">Feature Coming Soon</button>
+            </div>
+
+        </div>
+    </div>
+</section>
+{% endblock %}

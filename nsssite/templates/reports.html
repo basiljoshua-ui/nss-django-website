@@ -1,0 +1,164 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Reports & Publications | NSS Unit 99{% endblock %}
+
+{% block extra_css %}
+<style>
+.report-card {
+    background: white;
+    padding: 1.5rem;
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-sm);
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    transition: all var(--transition-fast);
+}
+.report-card:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-md);
+    border-left: 4px solid var(--color-primary);
+}
+.report-icon {
+    font-size: 2.5rem;
+    color: var(--color-primary-light);
+    transition: color var(--transition-fast);
+}
+.report-card:hover .report-icon {
+    color: var(--color-primary);
+}
+.report-info {
+    flex: 1;
+}
+.report-title {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 0.25rem;
+    color: var(--color-neutral-900);
+}
+.report-meta {
+    font-size: 0.85rem;
+    color: var(--color-neutral-600);
+}
+.report-download {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: var(--color-neutral-100);
+    color: var(--color-primary);
+    transition: all var(--transition-fast);
+}
+.report-card:hover .report-download {
+    background: var(--color-primary);
+    color: white;
+}
+</style>
+{% endblock %}
+
+{% block content %}
+<!-- Page Header -->
+<div class="page-header fade-up visible">
+    <div class="container">
+        <h1>Official Reports</h1>
+        <div class="breadcrumb">
+            <a href="{% url 'home' %}">Home</a> / <span>Reports</span>
+        </div>
+    </div>
+</div>
+
+<section class="section section-bg-grey">
+    <div class="container">
+        
+        <div class="grid" style="grid-template-columns: 1fr; gap: 3rem;">
+            
+            <!-- Annual Reports -->
+            <div class="fade-up">
+                <div class="section-title mb-1" style="display: flex; align-items: center; gap: 0.5rem; border-bottom: 2px solid var(--color-neutral-200); padding-bottom: 0.5rem;">
+                    <i class="fa-solid fa-book text-primary"></i> <h3>Annual Reports</h3>
+                </div>
+                <div class="grid grid-2 mt-1">
+                    <div class="report-card">
+                        <i class="fa-regular fa-file-pdf report-icon"></i>
+                        <div class="report-info">
+                            <h4 class="report-title">NSS Annual Report 2024-25</h4>
+                            <div class="report-meta">PDF • 4.2 MB • Published: March 2025</div>
+                        </div>
+                        <a href="#" class="report-download" aria-label="Download"><i class="fa-solid fa-download"></i></a>
+                    </div>
+                    <div class="report-card">
+                        <i class="fa-regular fa-file-pdf report-icon"></i>
+                        <div class="report-info">
+                            <h4 class="report-title">NSS Annual Report 2023-24</h4>
+                            <div class="report-meta">PDF • 3.8 MB • Published: March 2024</div>
+                        </div>
+                        <a href="#" class="report-download" aria-label="Download"><i class="fa-solid fa-download"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Special Camp Reports -->
+            <div class="fade-up">
+                <div class="section-title mb-1" style="display: flex; align-items: center; gap: 0.5rem; border-bottom: 2px solid var(--color-neutral-200); padding-bottom: 0.5rem;">
+                    <i class="fa-solid fa-campground text-accent"></i> <h3>Special Camp Reports</h3>
+                </div>
+                <div class="grid grid-2 mt-1">
+                    <div class="report-card">
+                        <i class="fa-regular fa-file-pdf report-icon"></i>
+                        <div class="report-info">
+                            <h4 class="report-title">7-Day Special Camp Report 2025 "Punarjani"</h4>
+                            <div class="report-meta">PDF • 5.1 MB • Published: January 2026</div>
+                        </div>
+                        <a href="#" class="report-download" aria-label="Download"><i class="fa-solid fa-download"></i></a>
+                    </div>
+                    <div class="report-card">
+                        <i class="fa-regular fa-file-pdf report-icon"></i>
+                        <div class="report-info">
+                            <h4 class="report-title">7-Day Special Camp Report 2024 "Navodaya"</h4>
+                            <div class="report-meta">PDF • 4.5 MB • Published: January 2025</div>
+                        </div>
+                        <a href="#" class="report-download" aria-label="Download"><i class="fa-solid fa-download"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Event Reports -->
+            <div class="fade-up">
+                <div class="section-title mb-1" style="display: flex; align-items: center; gap: 0.5rem; border-bottom: 2px solid var(--color-neutral-200); padding-bottom: 0.5rem;">
+                    <i class="fa-solid fa-clipboard-check text-primary"></i> <h3>Major Event Reports</h3>
+                </div>
+                <div class="grid grid-2 mt-1">
+                    <div class="report-card">
+                        <i class="fa-regular fa-file-pdf report-icon"></i>
+                        <div class="report-info">
+                            <h4 class="report-title">Mega Blood Donation Drive Report</h4>
+                            <div class="report-meta">PDF • 1.2 MB • Published: October 2025</div>
+                        </div>
+                        <a href="#" class="report-download" aria-label="Download"><i class="fa-solid fa-download"></i></a>
+                    </div>
+                    <div class="report-card">
+                        <i class="fa-regular fa-file-pdf report-icon"></i>
+                        <div class="report-info">
+                            <h4 class="report-title">Campus Anti-Drug Campaign Report</h4>
+                            <div class="report-meta">PDF • 2.0 MB • Published: August 2025</div>
+                        </div>
+                        <a href="#" class="report-download" aria-label="Download"><i class="fa-solid fa-download"></i></a>
+                    </div>
+                    <div class="report-card">
+                        <i class="fa-regular fa-file-pdf report-icon"></i>
+                        <div class="report-info">
+                            <h4 class="report-title">World Environment Day Observance</h4>
+                            <div class="report-meta">PDF • 1.8 MB • Published: June 2025</div>
+                        </div>
+                        <a href="#" class="report-download" aria-label="Download"><i class="fa-solid fa-download"></i></a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+{% endblock %}

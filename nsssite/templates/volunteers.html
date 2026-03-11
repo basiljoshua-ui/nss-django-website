@@ -1,0 +1,156 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Our Volunteers | NSS Unit 99{% endblock %}
+
+{% block extra_css %}
+<style>
+.volunteer-card {
+    background: white;
+    border-radius: var(--radius-lg);
+    padding: 2rem;
+    text-align: center;
+    box-shadow: var(--shadow-sm);
+    transition: all var(--transition-normal);
+}
+.volunteer-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-md);
+}
+.volunteer-img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin: 0 auto 1.5rem auto;
+    border: 4px solid var(--color-neutral-100);
+}
+.volunteer-name {
+    font-family: var(--font-heading);
+    font-size: 1.25rem;
+    margin-bottom: 0.25rem;
+}
+.volunteer-role {
+    color: var(--color-primary);
+    font-weight: 500;
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+}
+.volunteer-hours {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: var(--color-neutral-100);
+    padding: 0.25rem 0.75rem;
+    border-radius: var(--radius-full);
+    font-size: 0.85rem;
+    color: var(--color-neutral-800);
+}
+.hours-badge {
+    color: var(--color-accent);
+    font-weight: bold;
+}
+</style>
+{% endblock %}
+
+{% block content %}
+<!-- Page Header -->
+<div class="page-header fade-up visible">
+    <div class="container">
+        <h1>Our Volunteers</h1>
+        <div class="breadcrumb">
+            <a href="{% url 'home' %}">Home</a> / <span>Volunteers</span>
+        </div>
+    </div>
+</div>
+
+<!-- Volunteer Leadership -->
+<section class="section section-bg-grey">
+    <div class="container">
+        <div class="section-header text-center mb-2 fade-up">
+            <span class="section-tag">Core Team</span>
+            <h2 class="section-title">Volunteer Leadership</h2>
+        </div>
+        
+        <div class="grid grid-4 fade-up">
+            <!-- Core Member 1 -->
+            <div class="volunteer-card">
+                <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80" alt="Volunteer" class="volunteer-img">
+                <h3 class="volunteer-name">Jane Smith</h3>
+                <div class="volunteer-role">Volunteer Secretary</div>
+                <div class="volunteer-hours"><i class="fa-solid fa-clock"></i> <span class="hours-badge">240 hrs</span></div>
+            </div>
+            
+            <!-- Core Member 2 -->
+            <div class="volunteer-card">
+                <img src="https://images.unsplash.com/photo-1599566150163-29194dcaad36?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80" alt="Volunteer" class="volunteer-img">
+                <h3 class="volunteer-name">Michael Brown</h3>
+                <div class="volunteer-role">Joint Secretary</div>
+                <div class="volunteer-hours"><i class="fa-solid fa-clock"></i> <span class="hours-badge">215 hrs</span></div>
+            </div>
+
+            <!-- Core Member 3 -->
+            <div class="volunteer-card">
+                <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80" alt="Volunteer" class="volunteer-img">
+                <h3 class="volunteer-name">Sarah Davis</h3>
+                <div class="volunteer-role">Treasurer</div>
+                <div class="volunteer-hours"><i class="fa-solid fa-clock"></i> <span class="hours-badge">190 hrs</span></div>
+            </div>
+
+            <!-- Core Member 4 -->
+            <div class="volunteer-card">
+                <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80" alt="Volunteer" class="volunteer-img">
+                <h3 class="volunteer-name">David Wilson</h3>
+                <div class="volunteer-role">PR Head</div>
+                <div class="volunteer-hours"><i class="fa-solid fa-clock"></i> <span class="hours-badge">185 hrs</span></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Top Volunteers / Achievements -->
+<section class="section section-bg-white">
+    <div class="container">
+        <div class="section-header text-center mb-2 fade-up">
+            <span class="section-tag">Recognition</span>
+            <h2 class="section-title">Top Volunteers of the Month</h2>
+        </div>
+        
+        <div class="grid grid-3 fade-up">
+            <div class="volunteer-card" style="background: var(--color-neutral-100);">
+                <div style="position: absolute; top: 15px; left: 15px; color: gold; font-size: 1.5rem;"><i class="fa-solid fa-crown"></i></div>
+                <img src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80" alt="Top Volunteer" class="volunteer-img">
+                <h3 class="volunteer-name">Priya K.</h3>
+                <div class="volunteer-role">S3 CS</div>
+                <div class="volunteer-hours"><i class="fa-solid fa-clock"></i> <span class="hours-badge">45 hrs this month</span></div>
+            </div>
+            
+            <div class="volunteer-card" style="background: var(--color-neutral-100);">
+                <div style="position: absolute; top: 15px; left: 15px; color: silver; font-size: 1.5rem;"><i class="fa-solid fa-medal"></i></div>
+                <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80" alt="Top Volunteer" class="volunteer-img">
+                <h3 class="volunteer-name">Rahul M.</h3>
+                <div class="volunteer-role">S3 EC</div>
+                <div class="volunteer-hours"><i class="fa-solid fa-clock"></i> <span class="hours-badge">42 hrs this month</span></div>
+            </div>
+            
+            <div class="volunteer-card" style="background: var(--color-neutral-100);">
+                <div style="position: absolute; top: 15px; left: 15px; color: #cd7f32; font-size: 1.5rem;"><i class="fa-solid fa-medal"></i></div>
+                <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80" alt="Top Volunteer" class="volunteer-img">
+                <h3 class="volunteer-name">Anjali Nair</h3>
+                <div class="volunteer-role">S5 Civil</div>
+                <div class="volunteer-hours"><i class="fa-solid fa-clock"></i> <span class="hours-badge">38 hrs this month</span></div>
+            </div>
+        </div>
+        
+    </div>
+</section>
+
+<!-- Full Volunteer Directory (Placeholder) -->
+<section class="section section-bg-grey pb-0 fade-up text-center">
+    <div class="container">
+        <h3 class="mb-1">Want to see our full volunteer directory?</h3>
+        <p class="text-muted mb-2">We have over 120 dedicated active volunteers making a difference.</p>
+        <a href="#" class="btn btn-outline mb-2">View Directory</a>
+    </div>
+</section>
+{% endblock %}

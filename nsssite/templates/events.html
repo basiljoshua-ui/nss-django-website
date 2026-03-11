@@ -1,0 +1,184 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Events | NSS Unit 99{% endblock %}
+
+{% block extra_css %}
+<style>
+.filter-bar {
+    background: white;
+    padding: 1rem 1.5rem;
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-sm);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 2rem;
+}
+.filter-group {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+}
+.filter-btn {
+    background: var(--color-neutral-100);
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: var(--radius-full);
+    font-size: 0.875rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all var(--transition-fast);
+}
+.filter-btn:hover, .filter-btn.active {
+    background: var(--color-primary);
+    color: white;
+}
+.search-input {
+    padding: 0.5rem 1rem;
+    border: 1px solid var(--color-neutral-200);
+    border-radius: var(--radius-full);
+    outline: none;
+    font-family: inherit;
+    min-width: 200px;
+}
+.search-input:focus {
+    border-color: var(--color-primary);
+}
+</style>
+{% endblock %}
+
+{% block content %}
+<!-- Page Header -->
+<div class="page-header fade-up visible">
+    <div class="container">
+        <h1>Activities & Events</h1>
+        <div class="breadcrumb">
+            <a href="{% url 'home' %}">Home</a> / <span>Events</span>
+        </div>
+    </div>
+</div>
+
+<section class="section section-bg-grey">
+    <div class="container">
+        
+        <!-- Filter Bar -->
+        <div class="filter-bar fade-up">
+            <div class="filter-group">
+                <button class="filter-btn active">All</button>
+                <button class="filter-btn">Environmental</button>
+                <button class="filter-btn">Social</button>
+                <button class="filter-btn">Health</button>
+                <button class="filter-btn">Special Camps</button>
+            </div>
+            <div style="display: flex; gap: 1rem;">
+                <select class="search-input" style="width: auto;">
+                    <option value="">All Years</option>
+                    <option value="2026">2026</option>
+                    <option value="2025">2025</option>
+                    <option value="2024">2024</option>
+                </select>
+                <input type="text" placeholder="Search events..." class="search-input">
+            </div>
+        </div>
+
+        <!-- Events Grid -->
+        <div class="grid grid-3 fade-up">
+            <!-- Event Card 1 -->
+            <div class="card">
+                <div style="overflow: hidden;">
+                    <img src="https://images.unsplash.com/photo-1532996122724-e3c354a0b15f?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Blood Donation" class="card-img">
+                </div>
+                <div class="card-body">
+                    <div class="card-meta">
+                        <span><i class="fa-regular fa-calendar"></i> Oct 15, 2025</span>
+                        <span style="margin-left: auto;" class="badge badge-primary">Health</span>
+                    </div>
+                    <h3 class="card-title">Mega Blood Donation Drive</h3>
+                    <p class="card-text">A successful blood donation camp organized in association with the district hospital.</p>
+                    <a href="#" class="btn btn-outline" style="align-self: flex-start;">Read Report</a>
+                </div>
+            </div>
+            
+            <!-- Event Card 2 -->
+            <div class="card">
+                <div style="overflow: hidden;">
+                    <img src="https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Tree Plantation" class="card-img">
+                </div>
+                <div class="card-body">
+                    <div class="card-meta">
+                        <span><i class="fa-regular fa-calendar"></i> Sep 24, 2025</span>
+                        <span style="margin-left: auto;" class="badge badge-accent">Environmental</span>
+                    </div>
+                    <h3 class="card-title">Campus Tree Plantation</h3>
+                    <p class="card-text">Planted over 200 saplings around the college campus to promote environmental awareness.</p>
+                    <a href="#" class="btn btn-outline" style="align-self: flex-start;">Read Report</a>
+                </div>
+            </div>
+            
+            <!-- Event Card 3 -->
+            <div class="card">
+                <div style="overflow: hidden;">
+                    <img src="https://images.unsplash.com/photo-1509062522246-3755977927d7?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Awareness Campaign" class="card-img">
+                </div>
+                <div class="card-body">
+                    <div class="card-meta">
+                        <span><i class="fa-regular fa-calendar"></i> Aug 12, 2025</span>
+                        <span style="margin-left: auto;" class="badge badge-primary">Social</span>
+                    </div>
+                    <h3 class="card-title">Anti-Drug Awareness</h3>
+                    <p class="card-text">Interactive session and rally to spread awareness about the adverse effects of drug abuse.</p>
+                    <a href="#" class="btn btn-outline" style="align-self: flex-start;">Read Report</a>
+                </div>
+            </div>
+
+            <!-- Event Card 4 -->
+            <div class="card">
+                <div style="overflow: hidden;">
+                    <img src="https://images.unsplash.com/photo-1526976663112-00d22227d825?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Special Camp" class="card-img">
+                </div>
+                <div class="card-body">
+                    <div class="card-meta">
+                        <span><i class="fa-regular fa-calendar"></i> Dec 20, 2024 - Dec 27, 2024</span>
+                        <span style="margin-left: auto;" class="badge" style="background: var(--color-neutral-800); color: white;">Special Camp</span>
+                    </div>
+                    <h3 class="card-title">7-Day Special Camp: "Punarjani"</h3>
+                    <p class="card-text">Annual 7-day special camp focusing on asset creation and community lifestyle improvement in adopted village.</p>
+                    <a href="#" class="btn btn-outline" style="align-self: flex-start;">Read Report</a>
+                </div>
+            </div>
+            
+             <!-- Event Card 5 -->
+            <div class="card">
+                <div style="overflow: hidden;">
+                    <img src="https://images.unsplash.com/photo-1593113544332-96cb3440ad81?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Cleaning Drive" class="card-img">
+                </div>
+                <div class="card-body">
+                    <div class="card-meta">
+                        <span><i class="fa-regular fa-calendar"></i> Oct 02, 2024</span>
+                        <span style="margin-left: auto;" class="badge badge-accent">Environmental</span>
+                    </div>
+                    <h3 class="card-title">Gandhi Jayanti Cleaning Drive</h3>
+                    <p class="card-text">Massive cleaning drive at the local railway station and bus stand as part of Swachh Bharat Abhiyan.</p>
+                    <a href="#" class="btn btn-outline" style="align-self: flex-start;">Read Report</a>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Pagination -->
+        <div class="text-center mt-2 fade-up">
+            <div style="display: inline-flex; gap: 0.5rem;">
+                <button class="btn btn-outline" style="padding: 0.5rem 1rem;"><i class="fa-solid fa-chevron-left"></i> Prev</button>
+                <button class="btn btn-primary" style="padding: 0.5rem 1rem;">1</button>
+                <button class="btn btn-outline" style="padding: 0.5rem 1rem;">2</button>
+                <button class="btn btn-outline" style="padding: 0.5rem 1rem;">3</button>
+                <button class="btn btn-outline" style="padding: 0.5rem 1rem;">Next <i class="fa-solid fa-chevron-right"></i></button>
+            </div>
+        </div>
+
+    </div>
+</section>
+{% endblock %}
